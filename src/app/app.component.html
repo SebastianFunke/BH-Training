@@ -1,27 +1,23 @@
 <div class="centered container-body">
-    <mat-card class="centered mat-card-top">
-        <mat-card>Simple card</mat-card>
+
+    <mat-card class="centered mat-card-top" id="mat-card-top">
+        <mat-card>{{actualQuestion['question']}}</mat-card>
 
         <div class="checkboxes">
-            <mat-checkbox class="checkbox">
-                <mat-card class="checkbox-text"> Test Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi consectetur cumque quaerat corporis! Vitae blanditiis ratione vel esse odio? Fugit dicta adipisci quia ducimus. Numquam sequi soluta illo facilis doloribus?</mat-card>
-            </mat-checkbox>
-            <mat-checkbox class="checkbox">
-                <mat-card class="checkbox-text"> Test Lorem, i consectetur cumque quaerat corporis! Vitae blanditiis ratione vel esse odio? Fugit dicta adipisci quia ducimus. Numquam sequi soluta illo facilis doloribus?</mat-card>
-            </mat-checkbox>
-            <mat-checkbox class="checkbox">
-                <mat-card class="checkbox-text"> Test Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi consectetur cumque quaerat corporis! Vitae blanditiis ratione vel esse odio? Fugit dicta adipisci quia ducimus. Numquam sequi soluta illo facilis doloribus?</mat-card>
-            </mat-checkbox>
-            <mat-checkbox class="checkbox">
-                <mat-card class="checkbox-text"> T. Sequi consectetur cumque quaerat corporis! Vitae blanditiis ratione vel esse odio? Fugit dicta adipisci quia ducimus. Numquam sequi soluta illo facilis doloribus?</mat-card>
-            </mat-checkbox>
-            <mat-checkbox class="checkbox">
-                <mat-card class="checkbox-text"> e quaerat coo? Fugit dicta adipisci quia ducimus. Numquam sequi soluta illo facilis doloribus?</mat-card>
-            </mat-checkbox>
+            <section *ngFor="let answer of actualAnswers;let indexOfelement=index;">
+                <mat-checkbox id="{{ 'checkbox' + indexOfelement }}" class="checkbox " [(ngModel)]="checkedAnswers[indexOfelement]" [checked]="checkedAnswers[indexOfelement]">
+                    <mat-card id="{{ 'card' + indexOfelement }}" class="checkbox-text"> {{answer}}</mat-card>
+                </mat-checkbox>
+            </section>
 
         </div>
+        <mat-card>Richtig: {{ counterCorrect }} <br> Falsch: {{ counterFalse }}</mat-card>
 
-        <button mat-raised-button>Basic</button>
+        <div class="button-container">
+            <button mat-raised-button (click)="restartGame()">Neustart</button>
+            <button [disabled]="btnDisabled" mat-raised-button (click)="btnCheckClick()">{{ btnText }}</button>
+
+        </div>
     </mat-card>
 
 

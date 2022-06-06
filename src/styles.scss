@@ -16,3 +16,35 @@ body {
     justify-content: center !important;
     flex-direction: column !important;
 }
+
+#mat-card-top {
+    background-color: rgba(71, 71, 71, 0.551);
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+.mat-checkbox-layout {
+    padding-left: 2px;
+    background-color: white !important;
+    border-radius: 4px;
+}
+
+.correctAnswer {
+    background-color: #0f0;
+}
+
+.falseAnswer {
+    background-color: #f00;
+}
+
+.mat-card {
+    padding: 4px !important;
+}
+
+.button-container {
+    margin-top: 12px;
+    width: 100%;
+    display: flex !important;
+    justify-content: space-evenly !important;
+    align-items: flex-end;
+}
