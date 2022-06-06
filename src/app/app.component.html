@@ -14,7 +14,7 @@
         <mat-card>Richtig: {{ counterCorrect }} <br> Falsch: {{ counterFalse }}</mat-card>
 
         <div class="button-container">
-            <button mat-raised-button (click)="restartGame()">Neustart</button>
+            <button [disabled]="btnDisabled" mat-raised-button (click)="restartGame()">Neustart</button>
             <button [disabled]="btnDisabled" mat-raised-button (click)="btnCheckClick()">{{ btnText }}</button>
 
         </div>

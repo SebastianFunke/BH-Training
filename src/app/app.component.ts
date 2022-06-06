@@ -90,6 +90,9 @@ checkAnswers(){
       document.getElementById('checkbox'+i)?.classList.add('correctAnswer')
     } else {
       document.getElementById('checkbox'+i)?.classList.add('falseAnswer')
+      if(this.checkedAnswers[i] == true ){
+        document.getElementById('card'+i)?.classList.add('falseAnswer')
+      }
     }
   }
   if (this.actualCorrectAnswers[i]==true){
